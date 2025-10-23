@@ -1,6 +1,5 @@
 import "./App.css";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { motion } from "motion/react";
 import Form from "./components/Form";
 import Instructions from "./components/Instructions";

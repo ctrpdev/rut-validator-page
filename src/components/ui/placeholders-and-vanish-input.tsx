@@ -1,5 +1,3 @@
-"use client";
-
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -15,9 +13,9 @@ export function PlaceholdersAndVanishInput({
 }) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
 
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<number | null>(null);
   const startAnimation = () => {
-    intervalRef.current = setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setCurrentPlaceholder((prev) => (prev + 1) % placeholders.length);
     }, 3000);
   };
