@@ -7,7 +7,6 @@ export default function Form() {
   const [validationResult, setValidationResult] = useState<boolean | null>(null);
 
   const placeholders = [
-    "Ingresa un R.U.T.",
     "Ejemplo: 123456789",
     "Ejemplo: 12345678-9",
     "Ejemplo: 12.345.678-9",
@@ -37,9 +36,12 @@ export default function Form() {
         onSubmit={onSubmit}
       />
       {validationResult !== null && (
-        <p className={`mt-4 font-semibold ${validationResult ? "text-green-600/90" : "text-red-600/90"}`}>
-          {validationResult ? "R.U.T. válido" : "R.U.T. inválido"}
+        <div className={`mt-4 font-semibold flex flex-col items-center justify-center ${validationResult ? "text-green-700/90" : "text-red-700/90"}`}>
+          {validationResult ? `${rut}` : `${rut}`}
+        <p className={`${validationResult ? "text-green-700/90" : "text-red-700/90"}`}>
+          {validationResult ? `Es un RUT válido` : `No es un RUT válido`}
         </p>
+        </div>
       )}
     </div>
   );
